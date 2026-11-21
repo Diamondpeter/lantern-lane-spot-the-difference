@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Lane — Spot the Difference</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main id="app">
+  <header id="hud">
+    <div id="hud-title">🏮 Lantern Lane</div>
+    <div id="hud-round" class="pill">Round 1 of 3 · First Stroll</div>
+    <div id="hud-timer" class="pill">⏳ 2:30</div>
+    <div id="hud-score" class="pill">Score 0</div>
+    <div id="hud-counter" class="pill strong">5 differences hide in this street</div>
+  </header>
+
+  <div id="boards">
+    <section class="panel" aria-label="Original picture">
+      <h2>Left — the original</h2>
+      <div class="canvas-wrap">
+        <canvas id="panel-left" width="600" height="450"></canvas>
+        <canvas id="marks-left" class="marks" width="600" height="450"></canvas>
+      </div>
+    </section>
+    <section class="panel" aria-label="Changed picture">
+      <h2>Right — spot the changes</h2>
+      <div class="canvas-wrap">
+        <canvas id="panel-right" width="600" height="450"></canvas>
+        <canvas id="marks-right" class="marks" width="600" height="450"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <div id="hud-message" aria-live="polite"></div>
+
+  <footer id="controls">
+    <button id="btn-hint" type="button">✨ Ask the firefly (H) −25 pts</button>
+    <button id="btn-mute" type="button">🔊 Sound on</button>
+    <button id="btn-restart" type="button">↺ Restart game</button>
+    <span id="keys-hint">Mouse: click a difference · Keyboard: arrow keys move the spyglass, Enter checks, H hints</span>
+  </footer>
+
+  <div id="screen-title">
+    <div id="title-card">
+      <h1>🏮 Lantern Lane</h1>
+      <p class="tagline">A spot-the-difference stroll down a lantern-lit market street.</p>
+      <p>Two pictures hang side by side. They look the same — they are not.
+      Find every hidden difference before the lanterns burn down.</p>
+      <ul>
+        <li>Click a difference on either picture — a golden ring marks it.</li>
+        <li>A wrong click costs 3 seconds. The firefly hint costs 25 points.</li>
+        <li>Three rounds, more differences and less time each round.</li>
+      </ul>
+      <button id="btn-start" type="button">Start the stroll →</button>
+    </div>
+  </div>
+
+  <div id="banner" hidden>
+    <h2 id="banner-title"></h2>
+    <p id="banner-text"></p>
+    <button id="banner-button" type="button"></button>
+  </div>
+
+  <div id="selftest" data-done=""></div>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

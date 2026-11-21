@@ -1,0 +1,76 @@
+/* Lantern Lane — warm night-market styling. No external fonts or images. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #17102e;
+  color: #f5e6c8;
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+}
+
+#app { max-width: 1280px; margin: 0 auto; padding: 12px 16px 24px; }
+
+#hud {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  margin-bottom: 10px;
+}
+
+#hud-title { font-size: 28px; font-weight: bold; margin-right: 8px; }
+
+.pill {
+  background: #2c1e5e; border: 1px solid #6b4fa1; border-radius: 999px;
+  padding: 6px 14px; font-size: 15px;
+}
+.pill.strong { background: #7a4a12; border-color: #ffb347; font-weight: bold; }
+#hud-timer.low { background: #8e1616; border-color: #ff6b6b; animation: pulse 1s infinite; }
+@keyframes pulse { 50% { opacity: 0.6; } }
+
+#boards { display: flex; gap: 16px; justify-content: center; }
+.panel { flex: 0 0 auto; }
+.panel h2 {
+  margin: 4px 0 6px; font-size: 15px; font-weight: normal;
+  color: #cbb6f0; text-align: center; letter-spacing: 0.04em;
+}
+.canvas-wrap { position: relative; width: 600px; height: 450px; }
+.canvas-wrap canvas { position: absolute; inset: 0; display: block; border-radius: 10px; }
+#panel-left, #panel-right { background: #241a52; border: 3px solid #6b4fa1; cursor: crosshair; }
+.marks { pointer-events: none; }
+
+#hud-message { min-height: 26px; margin: 8px 0 2px; text-align: center; font-size: 16px; color: #ffd97a; }
+
+#controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-top: 6px; }
+button {
+  background: #7a4a12; color: #fff3d6; border: 1px solid #ffb347;
+  border-radius: 8px; padding: 9px 16px; font-size: 15px; cursor: pointer;
+  font-family: inherit;
+}
+button:hover { background: #96600f; }
+#keys-hint { font-size: 13px; color: #b9a8dd; }
+
+#screen-title {
+  position: fixed; inset: 0; background: rgba(16, 9, 38, 0.88);
+  display: flex; align-items: center; justify-content: center; z-index: 10;
+}
+#screen-title[hidden] { display: none; }
+#title-card {
+  max-width: 560px; background: #2c1e5e; border: 2px solid #ffb347;
+  border-radius: 16px; padding: 28px 32px; text-align: center;
+}
+#title-card h1 { margin: 0 0 6px; font-size: 40px; }
+#title-card .tagline { font-style: italic; color: #ffd97a; margin: 0 0 14px; }
+#title-card p { line-height: 1.5; }
+#title-card ul { text-align: left; line-height: 1.7; margin: 12px 0 20px; }
+#btn-start { font-size: 18px; padding: 12px 26px; }
+
+#banner {
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  background: #2c1e5e; border: 2px solid #ffd700; border-radius: 16px;
+  padding: 26px 34px; text-align: center; z-index: 10; max-width: 520px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+#banner[hidden] { display: none; }
+#banner h2 { margin: 0 0 8px; font-size: 28px; }
+#banner p { line-height: 1.5; }
+
+#selftest { font-size: 11px; color: #6b5a8e; margin-top: 14px; word-break: break-all; }
